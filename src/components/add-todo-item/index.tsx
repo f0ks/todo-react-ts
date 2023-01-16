@@ -8,7 +8,10 @@ function AddTodoItem({addTodo}: {addTodo: Function}) {
     return (
         <div>
           <input type="text" value={newTodo} onChange={(e) => setNewTodo(e.target.value)} />
-          <button onClick={() => addTodo(newTodo)}>add</button>
+          <button onClick={() => {
+            addTodo(newTodo);
+            setNewTodo('');
+          }}>add</button>
         </div>
     );
 }
